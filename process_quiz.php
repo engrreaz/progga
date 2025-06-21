@@ -8,6 +8,7 @@ if (empty($_SESSION['usr']) || $_SESSION['role']!=='student') {
 if ($_SERVER['REQUEST_METHOD']!=='POST' || empty($_POST['quiz_id']) || empty($_POST['answers'])) {
     die("Invalid request");
 }
+$usr = $_SESSION['usr'] ?? 'plexiboard';
 $sccode = $_SESSION['sccode'] ?? null;
 $stid   = $_SESSION['stid'] ?? null;
 $quiz_id = intval($_POST['quiz_id']);

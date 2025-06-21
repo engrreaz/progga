@@ -1,7 +1,7 @@
 <?php
 // process_quiz.php
 require_once 'db.php';
-if (empty($_SESSION['user_id']) || $_SESSION['role']!=='student') {
+if (empty($_SESSION['usr']) || $_SESSION['role']!=='student') {
     header('Location: login.php');
     exit;
 }

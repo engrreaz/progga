@@ -167,7 +167,7 @@ function addXP($conn, $user_id, $email, $xp, $reason) {
     $stmt->execute();
 }
 
-addXP($conn, $_SESSION['user_id'], 'engrreaz@gmail.com', 25, "Chapter Completed");
+// addXP($conn, $_SESSION['user_id'], 'engrreaz@gmail.com', 25, "Chapter Completed");
 
 
 

@@ -12,3 +12,6 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
 
 $usr = $_SESSION['user'];
 $user_id = $_SESSION['user_id'];
+
+
+require_once 'utils.php';

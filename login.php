@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt->bind_param("s", $username);
   $stmt->execute();
   $res = $stmt->get_result();
-  echo $res->num_rows;
+  // echo $res->num_rows;
   if ($res->num_rows === 1) {
     $user = $res->fetch_assoc();
     // if (password_verify($password, $user['fixedpin'])) {

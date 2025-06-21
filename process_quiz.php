@@ -61,7 +61,7 @@ foreach ($topic_scores as $topic_code => $data) {
         'level' => $lvl,
         'timestamp' => date('Y-m-d H:i:s')
     ]);
-    $stmt2->bind_param("ssisiss", $sccode, $stid, $quiz_id, $topic_code, $data['correct'], $data['total'], $detail);
+    $stmt2->bind_param("isisdds", $sccode, $stid, $quiz_id, $topic_code, $data['correct'], $data['total'], $detail);
     $stmt2->execute();
     $stmt2->close();
     // low score হলে learning_paths-এ পুনরায় resource assign

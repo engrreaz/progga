@@ -1,8 +1,8 @@
 <?php
 require_once 'db.php';
 if (empty($_SESSION['usr'])) {
-    // header('Location: login.php');
-    // exit;
+    header('Location: login.php');
+    exit;
 }
 $usr = $_SESSION['usr'];
 $role   = $_SESSION['role'];

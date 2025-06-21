@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $password = $_POST['password'];
 
   $sql = "SELECT id, email, fixedpin, userlevel FROM usersapp WHERE email=?";
-  echo $sql;
+  // echo $sql;
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("s", $username);
   $stmt->execute();
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($res->num_rows === 1) {
     $user = $res->fetch_assoc();
     // if (password_verify($password, $user['fixedpin'])) {
-    echo $user['fixedpin'];
+    // echo $user['fixedpin'];
     // if ($password==$user['fixedpin']) {
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['usr'] = $user['email'];
@@ -40,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
   $error = 'অগ্রহণযোগ্য ইউজারনেম বা পাসওয়ার্ড';
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="bn">

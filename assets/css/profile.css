@@ -1,0 +1,54 @@
+body {
+  font-family: 'Noto Sans Bengali', 'Segoe UI', sans-serif;
+  background: #eef2f5;
+  padding: 40px;
+}
+
+.profile-card {
+  background: #fff;
+  padding: 25px;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+}
+
+h2, h3 {
+  text-align: center;
+}
+
+.progress {
+  background: #ddd;
+  border-radius: 6px;
+  margin: 15px 0;
+  height: 25px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: #00a36c;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  line-height: 25px;
+  transition: 0.4s ease;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.badge {
+  text-align: center;
+}
+
+.badge img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}

@@ -8,3 +8,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
      define('BASE_URL', 'https://progga.eimbox.com');
      define('IMG_BASE_URL', 'https://eimbox.com');
 }
+
+
+$usr = $_SESSION['user'];
+$user_id = $_SESSION['user_id'];

@@ -76,8 +76,10 @@ include 'header.php';
         <li class="list-group-item"><a href="quiz.php"> Quiz </a></li>
         <li class="list-group-item"><a href="syllabus.php"> Syllabus </a></li>
         <li class="list-group-item"><a href="take_quiz.php"> Take Quiz </a></li>
-        <!-- <li class="list-group-item"><a href=".php">  </a></li> -->
         <li class="list-group-item"><a href="view_reports.php"> View Reports </a></li>
+        <li class="list-group-item"><a href="badges.php"> Badges </a></li>
+        <!-- <li class="list-group-item"><a href=".php">  </a></li> -->
+        <!-- <li class="list-group-item"><a href=".php">  </a></li> -->
 
 
     </ul>

@@ -69,6 +69,18 @@ foreach ($topic_scores as $topic_code => $data) {
         generateLearningPath($conn, $sccode, $stid);
     }
 }
+
+
+$user_id = $_SESSION['user_id'];
+$xp = 50;
+$reason = "Quiz Completed";
+
+$sql = "INSERT INTO user_xp_log (user_id, email,  xp, reason) VALUES (?, ?,  ?, ?)";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("isis", $user_id, $usr, $xp, $reason);
+$stmt->execute();
+
+
 // Student-কে summary দেখানো
 include 'header.php';
 ?>

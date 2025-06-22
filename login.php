@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $username = $conn->real_escape_string($_POST['username']);
   $password = $_POST['password'];
 
-  $sql = "SELECT id, email, fixedpin, userlevel FROM usersapp WHERE email=?";
+  $sql = "SELECT id, email, fixedpin, userlevel, userid FROM usersapp WHERE email=?";
   // echo $sql;
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("s", $username);
@@ -18,23 +18,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // if (password_verify($password, $user['fixedpin'])) {
     // echo $user['fixedpin'];
     // if ($password==$user['fixedpin']) {
-    $_SESSION['user_id'] = $user['id'];
-    $_SESSION['usr'] = $user['email'];
-    $_SESSION['sccode'] = $user['sccode'];
-    $_SESSION['role'] = $user['userlevel'];
 
+    $usr = $user['email'];
+    $sccode = $user['sccode'];
+    $userlevel = $user['userlevel'];
+    $userid = $user['userid'];
 
-    if ($user['userlevel'] === 'student' || $user['userlevel'] === 'Super Administrator') {
+    $_SESSION['usr'] = $usr;
+    $_SESSION['sccode'] = $sccode;
+    $_SESSION['userlevel'] = $userlevel;
+    $_SESSION['userid'] = $userid;
+
+    setcookie("usr", $usr, time() + (86400 * 30), "/");
+    setcookie("sccode", $sccode, time() + (86400 * 30), "/");
+    setcookie( "userlevel", $userlevel, time() + (86400 * 30), "/");
+    setcookie("userid", $userid, time() + (86400 * 30), "/");
+
+    if ($user['userlevel'] === 'student') {
       // Query sessioninfo টেবিলে student-এর record
       $stmt = $conn->prepare("SELECT sccode, stid, classname FROM sessioninfo WHERE stid=? LIMIT 1");
       $stmt->bind_param("s", $user['stid']); // ধরে নিচ্ছি usersapp-এর row-এ stid আছে
       $stmt->execute();
       $ri = $stmt->get_result()->fetch_assoc();
-      $_SESSION['sccode'] = '103187'; // $ri['sccode'];
-      $_SESSION['stid'] = '1031871299';// $ri['stid'];
-      $_SESSION['class'] = '9';//$ri['classname'];
+
+      $stid = $ri['stid'] ?? '';
+      $clsname = $ri['classname'] ?? '';
+      
+      $_SESSION['stid'] = $stid;
+      $_SESSION['clsname'] = $clsname;
+
       $stmt->close();
     }
+    setcookie("stid", $stid, time() + (86400 * 30), "/"); // 30 দিন
+    setcookie("clsname", $clsname, time() + (86400 * 30), "/"); // 30 দিন
+
+
+
     header('Location: dashboard.php');
     exit;
     // }

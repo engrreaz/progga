@@ -11,3 +11,58 @@ body {
 h3, h5 {
   color: #343a40;
 }
+
+
+  #splash {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, #4a90e2, #9013fe);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    #splash.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* লোগো/টাইটেল */
+    #splash h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      user-select: none;
+    }
+
+    /* লোডিং স্পিনার */
+    .loader {
+      border: 6px solid rgba(255, 255, 255, 0.3);
+      border-top: 6px solid #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+      user-select: none;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+
+    /* রেসপন্সিভ টাইপোগ্রাফি */
+    @media (max-width: 600px) {
+      #splash h1 {
+        font-size: 1.8rem;
+      }
+
+      .loader {
+        width: 40px;
+        height: 40px;
+        border-width: 4px;
+      }
+    }

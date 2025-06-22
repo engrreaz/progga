@@ -1,0 +1,33 @@
+/* theme.css */
+body.theme-light {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+body.theme-dark {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+.card, .table, .form-control, .form-select, .alert {
+  transition: background 0.3s, color 0.3s;
+}
+
+body.theme-dark .card,
+body.theme-dark .table,
+body.theme-dark .form-control,
+body.theme-dark .form-select {
+  background-color: #1e1e1e;
+  color: #f8f9fa;
+  border-color: #444;
+}
+
+body.theme-dark .btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+body.theme-dark .alert-info {
+  background-color: #0d6efd22;
+  color: #e0e0ff;
+}

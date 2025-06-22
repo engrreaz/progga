@@ -1,16 +1,15 @@
 <?php
 // add_questions.php
 require_once 'db.php';
-if (empty($_SESSION['usr']) || $_SESSION['role']==='studentx') {
-    header('Location: login.php');
+
+if ($userlevel != 'Super Administrator') {
+    header('Location: dashboard.php');
     exit;
 }
 $error = $success = '';
-// Fetch quizzes teacher তৈরি করেছে (class context)
-$sccode = $_SESSION['sccode'] ?? '';
-$class = $_SESSION['class'] ?? 9;
+
 $stmtQ = $conn->prepare("SELECT id, quiz_name FROM quizzes WHERE class=?");
-$stmtQ->bind_param("s", $class);
+$stmtQ->bind_param("s", $clsname);
 $stmtQ->execute();
 $quizzes = $stmtQ->get_result()->fetch_all(MYSQLI_ASSOC);
 $stmtQ->close();
@@ -34,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     $stmt->close();
 }
 
-include 'header.php';
 ?>
 <h4>Add Questions to Quiz</h4>
 <?php if($error): ?><div class="alert alert-danger"><?= htmlspecialchars($error) ?></div><?php endif; ?>

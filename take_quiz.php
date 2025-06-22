@@ -1,7 +1,7 @@
 <?php
 // take_quiz.php
 require_once 'db.php';
-if (empty($_SESSION['user_id']) || $_SESSION['role']!=='student') {
+if (empty($_SESSION['usr']) ) {
     header('Location: login.php');
     exit;
 }
@@ -19,7 +19,7 @@ $res = $stmt->get_result();
 $quizzes = $res->fetch_all(MYSQLI_ASSOC);
 $stmt->close();
 
-include 'header.php';
+
 ?>
 <h4>Available Quizzes</h4>
 <?php if(empty($quizzes)): ?>

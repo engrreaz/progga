@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </div>
           <div class="mb-3">
             <label class="form-label">পাসওয়ার্ড</label>
-            <input type="password" name="password" class="form-control" required>
+            <input type="password" name="password" class="form-control" autocomplete="new-password" required>
           </div>
           <button class="btn btn-primary w-100">লগইন</button>
         </form>

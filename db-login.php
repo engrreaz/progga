@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'inc.php';
-echo ENV;
+
 if (ENV == 'local') {
     $servername = "localhost";
     $username = "root";
@@ -84,7 +84,7 @@ if ($usr != '') {
 
 <body class="theme-light">
 
-    <div id="splash" hidden>
+    <div id="splash" >
         <img src="assets/images/progga.png" style="width:100px;" />
         <h1 class="m-0 p-0">প্রজ্ঞা</h1>
         <h6 class="m-0 p-0">শেখো, নিজের মতো করে</h6>

@@ -24,6 +24,9 @@ if (isset($_COOKIE['usr'])) {
 } else {
     $usr = $_SESSION['usr'] ?? '';
 }
+
+
+
 if (isset($_COOKIE['sccode'])) {
     $sccode = $_COOKIE['sccode'];
 } else {
@@ -60,8 +63,8 @@ $sessionyear = date('Y');
 require_once 'utils.php';
 
 // if (empty($_SESSION['usr'])) {
-    // header('Location: login.php');
-    // exit;
+// header('Location: login.php');
+// exit;
 // }
 
 include 'header.php';

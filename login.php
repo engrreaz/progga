@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       $stid = $ri['stid'] ?? '';
       $clsname = $ri['classname'] ?? '';
-      
+
       $_SESSION['stid'] = $stid;
       $_SESSION['clsname'] = $clsname;
 
@@ -66,7 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="bn">
 
 <head>
-  <?php include 'header.php'; ?>
   <title>লগইন</title>
 </head>
 

@@ -33,7 +33,7 @@
             splash.classList.add('hidden');
             // পুরোপুরি DOM থেকে সরাতে চাইলে:
             // splash.style.display = 'none';
-        }, 100); // 3 সেকেন্ড পর splash স্ক্রিন লুকিয়ে যাবে
+        }, 10); // 3 সেকেন্ড পর splash স্ক্রিন লুকিয়ে যাবে
     });
 </script>
 

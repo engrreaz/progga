@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'inc.php';
-
+echo ENV;
 if (ENV == 'local') {
     $servername = "localhost";
     $username = "root";

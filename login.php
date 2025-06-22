@@ -79,14 +79,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php if ($error): ?>
           <div class="alert alert-danger"><?= $error ?></div>
         <?php endif; ?>
-        <form method="POST" action=""  autocomplete="off">
+        <form method="POST" action="" >
           <div class="mb-3">
             <label class="form-label">ইউজারনেম</label>
-            <input type="text" name="username" class="form-control"  autocomplete="off" required>
+            <input type="text" name="username" class="form-control" required>
           </div>
           <div class="mb-3">
             <label class="form-label">পাসওয়ার্ড</label>
-            <input type="password" name="password" class="form-control" autocomplete="new-password" required>
+            <input type="password" name="password" class="form-control"  required>
           </div>
           <button class="btn btn-primary w-100">লগইন</button>
         </form>

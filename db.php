@@ -51,6 +51,8 @@ if (isset($_COOKIE['clsname'])) {
 }
 
 
+echo $usr . '/' . $sccode . '/' . $userlevel . '/' . $userid;
+
 $cur = date('Y-m-d H:i:s');
 $td = date('Y-m-d');
 $sessionyear = date('Y');

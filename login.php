@@ -20,7 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // if ($password==$user['fixedpin']) {
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['usr'] = $user['email'];
-    $_SESSION['role'] = 'student';// $user['userlevel'];
+    $_SESSION['sccode'] = $user['sccode'];
+    $_SESSION['role'] = $user['userlevel'];
 
 
     if ($user['userlevel'] === 'student' || $user['userlevel'] === 'Super Administrator') {

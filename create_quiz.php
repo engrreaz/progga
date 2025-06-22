@@ -1,8 +1,8 @@
 <?php
 // create_quiz.php
-require_once 'includes/config.php';
+require_once 'db.php';
 if (empty($_SESSION['user_id']) || $_SESSION['role']==='student') {
-    header('Location: /auth/login.php');
+    header('Location: login.php');
     exit;
 }
 $error = $success = '';
@@ -56,4 +56,4 @@ include 'includes/header.php';
   </div>
   <button class="btn btn-primary">Create Quiz</button>
 </form>
-<?php include 'includes/footer.php'; ?>
+<?php include 'footer.php'; ?>

@@ -78,6 +78,15 @@ include 'header.php';
         <li class="list-group-item"><a href="take_quiz.php"> Take Quiz </a></li>
         <li class="list-group-item"><a href="view_reports.php"> View Reports </a></li>
         <li class="list-group-item"><a href="badges.php"> Badges </a></li>
+        <li class="list-group-item"><a href="add_textbook.php"> Entry TextBook </a></li>
+        <li class="list-group-item"><a href="view_textbook.php"> View Textbook </a></li>
+        <!-- <li class="list-group-item"><a href=".php">  </a></li> -->
+        <!-- <li class="list-group-item"><a href=".php">  </a></li> -->
+        <!-- <li class="list-group-item"><a href=".php">  </a></li> -->
+        <!-- <li class="list-group-item"><a href=".php">  </a></li> -->
+        <!-- <li class="list-group-item"><a href=".php">  </a></li> -->
+        <!-- <li class="list-group-item"><a href=".php">  </a></li> -->
+        <!-- <li class="list-group-item"><a href=".php">  </a></li> -->
         <!-- <li class="list-group-item"><a href=".php">  </a></li> -->
         <!-- <li class="list-group-item"><a href=".php">  </a></li> -->
 

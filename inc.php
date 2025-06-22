@@ -11,7 +11,10 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
 
 
 $usr = $_SESSION['usr'] ?? '';
-$user_id = $_SESSION['user_id'];
+$cur = date('Y-m-d H:i:s');
+$td = date('Y-m-d');
+$sessionyear = date('Y');
+$sccode =  $_SESSION['sccode'] ?? '';
 
 
 require_once 'utils.php';

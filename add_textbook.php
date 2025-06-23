@@ -1,9 +1,9 @@
 <?php
 require_once 'db.php';
 
-if (empty($_SESSION['usr']) || $_SESSION['role'] === 'Super Administrator') {
-    // header('Location: login.php');
-    // exit;
+if (empty($_SESSION['usr']) || $_SESSION['userlevel'] != 'Super Administrator') {
+    header('Location: login.php');
+    exit;
 }
 $error = $success = '';
 $entryby = $_SESSION['usr'];
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->close();
 }
 
-include 'header.php';
+
 
 
 // db.php যুক্ত করতে হবে
@@ -62,23 +62,37 @@ $classList = [
 
 <form method="POST">
 
+    <div class="row">
+        <div class="col-md-9">
 
-<div class="mb-3">
-  <label class="form-label">Class</label>
-  <select name="classname" id="classname" class="form-select" required>
-    <option value="">--Select Class--</option>
-    <?php foreach($classList as $cls): ?>
-      <option value="<?= $cls['classname'] ?>"><?= htmlspecialchars($cls['classname']) ?></option>
-    <?php endforeach; ?>
-  </select>
-</div>
+            <div class="row">
+   
+                    <div class="mb-2">
+                        <label class="form-label">Class</label>
+                        <select name="classname" id="classname" class="form-select" required>
+                            <option value="">--Select Class--</option>
+                            <?php foreach ($classList as $cls): ?>
+                                <option value="<?= $cls['classname'] ?>"><?= htmlspecialchars($cls['classname']) ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
 
-<div class="mb-3">
-  <label class="form-label">Subject Code</label>
-  <select name="subcode" id="subcode" class="form-select" required>
-    <option value="">--Select Subject--</option>
-  </select>
-</div>
+                       <div class="mb-3">
+        <label class="form-label">Subject Code</label>
+        <select name="subcode" id="subcode" class="form-select" required>
+            <option value="">--Select Subject--</option>
+        </select>
+    </div>
+
+            </div>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+
+
+ 
 
 
     <div class="mb-3"><label>Unique ID</label><input type="text" name="uniqid" class="form-control" required></div>
@@ -104,9 +118,10 @@ $classList = [
 
 
     <div class="mb-3"><label>Title</label><input type="text" name="title" class="form-control" required></div>
-    
-    
-    <div class="mb-3"><label>Sub Chapter</label><input type="text" name="subchapter" class="form-control" required></div> 
+
+
+    <div class="mb-3"><label>Sub Chapter</label><input type="text" name="subchapter" class="form-control" required>
+    </div>
     <div class="mb-3"><label>Subtitle</label><input type="text" name="subtitle" class="form-control"></div>
     <div class="mb-3"><label>Required Class</label><input type="number" name="reqclass" class="form-control" required>
     </div>
@@ -122,23 +137,23 @@ $classList = [
 </script>
 
 <script>
-document.getElementById('classname').addEventListener('change', function() {
-  const classId = this.value;
-  const subjectDropdown = document.getElementById('subcode');
-  subjectDropdown.innerHTML = '<option>Loading...</option>';
+    document.getElementById('classname').addEventListener('change', function () {
+        const classId = this.value;
+        const subjectDropdown = document.getElementById('subcode');
+        subjectDropdown.innerHTML = '<option>Loading...</option>';
 
-  fetch('get_subjects.php?class_id=' + classId)
-    .then(res => res.json())
-    .then(data => {
-      subjectDropdown.innerHTML = '<option value="">--Select Subject--</option>';
-      data.forEach(sub => {
-        const opt = document.createElement('option');
-        opt.value = sub.subcode;
-        opt.text = sub.subject_name + ' (' + sub.subcode + ')';
-        subjectDropdown.appendChild(opt);
-      });
+        fetch('get_subjects.php?class_id=' + classId)
+            .then(res => res.json())
+            .then(data => {
+                subjectDropdown.innerHTML = '<option value="">--Select Subject--</option>';
+                data.forEach(sub => {
+                    const opt = document.createElement('option');
+                    opt.value = sub.subcode;
+                    opt.text = sub.subject_name + ' (' + sub.subcode + ')';
+                    subjectDropdown.appendChild(opt);
+                });
+            });
     });
-});
 </script>
 
 <?php include 'footer.php'; ?>

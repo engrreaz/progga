@@ -10,19 +10,57 @@
 
 <!-- Theme Toggle JS -->
 <script>
+
+
+
+
+
+
+
     document.addEventListener('DOMContentLoaded', function () {
         const body = document.body;
         const theme = localStorage.getItem('theme') || 'light';
         body.classList.add(`theme-${theme}`);
+        const icon = document.getElementById('themeIcon');
+
+        const isDark = document.body.classList.contains('theme-dark');
+      
+        if (isDark) {
+            icon.classList.remove('bi-moon-fill');
+            icon.classList.add('bi-sun-fill');
+        } else {
+            icon.classList.remove('bi-sun-fill');
+            icon.classList.add('bi-moon-fill');
+        }
+
+
+
 
         document.getElementById('toggleTheme').addEventListener('click', () => {
+            const icon = document.getElementById('themeIcon');
             const current = body.classList.contains('theme-dark') ? 'dark' : 'light';
             const next = current === 'dark' ? 'light' : 'dark';
             body.classList.remove(`theme-${current}`);
             body.classList.add(`theme-${next}`);
+
+
+            const isDark = document.body.classList.contains('theme-dark');
+            // alert(isDark);
+             if (isDark) {
+            icon.classList.remove('bi-moon-fill');
+            icon.classList.add('bi-sun-fill');
+        } else {
+            icon.classList.remove('bi-sun-fill');
+            icon.classList.add('bi-moon-fill');
+        }
+
             localStorage.setItem('theme', next);
         });
     });
+
+
+
+
 </script>
 
 <script>

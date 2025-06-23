@@ -1,7 +1,7 @@
 <?php
 // syllabus.php
 require_once 'db.php';
-if (empty($_SESSION['user_id']) || $_SESSION['role']!=='student') {
+if (empty($_SESSION['usr']) ) {
     header('Location: login.php');
     exit;
 }
@@ -53,7 +53,7 @@ while ($r = $res2->fetch_assoc()) {
 }
 $stmt2->close();
 
-include 'header.php';
+
 ?>
 <h4>Syllabus Progress (Class <?= htmlspecialchars($class) ?>)</h4>
 <table class="table">

@@ -18,7 +18,7 @@
 
 <body class="theme-light">
 
- <div id="splash" >
+ <div id="splash" hidden>
   <img src="assets/images/progga.png" style="width:100px;"/>
     <h1 class="m-0 p-0">প্রজ্ঞা</h1>
     <h6 class="m-0 p-0">শেখো, নিজের মতো করে</h6>
@@ -30,22 +30,22 @@
     <a class="navbar-brand" href="dashboard.php">প্রজ্ঞা — AI·PLS</a>
 
      <?php if (!empty($_SESSION['usr'])): ?>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="dashboard.php"><?php echo $usr . ' - ' . $userlevel; ?></a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="dashboard.php">ড্যাশবোর্ড</a></li>
-            <li class="nav-item"><a class="nav-link" href="logout.php">লগ আউট</a></li>
+            <li class="nav-item"><a class="nav-link" href="dashboard.php">  <i class="bi bi-house-door-fill text-primary"></i> </a></li>
+            <li class="nav-item"><a class="nav-link" href="logout.php"> <i class="bi bi-box-arrow-right text-danger"></i> </a></li>
           </ul>
         </div>
       <?php endif; ?>
 
 
     <div class="ms-auto">
-      <button id="toggleTheme" class="btn btn-outline-dark p-1 pe-2">🌙</button>
+      <div id="toggleTheme" class=" btn-outline-secondary ddx p-0 ps-1 pe-1"><i id="themeIcon" class="bi bi-moon-fill"></i></div>
     </div>
   </nav>
 

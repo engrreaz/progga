@@ -221,28 +221,22 @@ if ($usr == '') {
       <li><a href="quizzes.php" class="nav-link">📊 কুইজ</a></li>
       <li><a href="chapters.php" class="nav-link">📚 অধ্যায়সমূহ</a></li>
       <li><a href="leaderboard.php" class="nav-link">🏆 লিডারবোর্ড</a></li>
-      <li><a href="add_questions.php"  class="nav-link"> Add Questions </a></li>
-    </ul>
-
-    <h5>Menu</h5>
-
-    <ul class="list-group">
-      <li class="list-group-item"><a href="add_questions.php"> Add Questions </a></li>
-      <li class="list-group-item"><a href="create_diagnostic.php"> Create Diagnostic </a></li>
-      <li class="list-group-item"><a href="create_quiz.php"> Create Quiz </a></li>
-      <li class="list-group-item"><a href="diagnostic_form.php"> Diagnostic Form </a></li>
-      <li class="list-group-item"><a href="learning_path.php"> Learning Path </a></li>
-      <li class="list-group-item"><a href="process_diagnostic.php"> Process Diagnostic </a></li>
-      <li class="list-group-item"><a href="update_path.php"> Update Path </a></li>
-      <li class="list-group-item"><a href="assign_resources.php"> Assign Resources </a></li>
-      <li class="list-group-item"><a href="process_quiz.php"> Process Quiz </a></li>
-      <li class="list-group-item"><a href="quiz.php"> Quiz </a></li>
-      <li class="list-group-item"><a href="syllabus.php"> Syllabus </a></li>
-      <li class="list-group-item"><a href="take_quiz.php"> Take Quiz </a></li>
-      <li class="list-group-item"><a href="view_reports.php"> View Reports </a></li>
-      <li class="list-group-item"><a href="badges.php"> Badges </a></li>
-      <li class="list-group-item"><a href="add_textbook.php"> Entry TextBook </a></li>
-      <li class="list-group-item"><a href="view_textbook.php"> View Textbook </a></li>
+      <li><a href="add_questions.php" class="nav-link"> <i class="bi bi-question-circle"></i>  প্রশ্ন যুক্ত/সম্পাদনা </a></li>
+      <li><a class="nav-link" href="create_diagnostic.php"> Create Diagnostic </a></li>
+      <li><a class="nav-link" href="create_quiz.php"> Create Quiz </a></li>
+      <li><a class="nav-link" href="diagnostic_form.php"> Diagnostic Form </a></li>
+      <li><a class="nav-link" href="learning_path.php"> <i class="bi bi-journals"></i>   Learning Path </a></li>
+      <li><a class="nav-link" href="process_diagnostic.php"> Process Diagnostic </a></li>
+      <li><a class="nav-link" href="update_path.php"> Update Path </a></li>
+      <li><a class="nav-link" href="assign_resources.php"> Assign Resources </a></li>
+      <li><a class="nav-link" href="process_quiz.php"> Process Quiz </a></li>
+      <li><a class="nav-link" href="quiz.php"> <i class="bi bi-patch-question"></i>    Quiz </a></li>
+      <li><a class="nav-link" href="syllabus.php"> Syllabus </a></li>
+      <li><a class="nav-link" href="take_quiz.php"> Take Quiz </a></li>
+      <li><a class="nav-link" href="view_reports.php"> View Reports </a></li>
+      <li><a class="nav-link" href="badges.php"> Badges </a></li>
+      <li><a class="nav-link" href="add_textbook.php"> Entry TextBook </a></li>
+      <li><a class="nav-link" href="view_textbook.php"> View Textbook </a></li>
       <!-- <li class="list-group-item"><a href=".php">  </a></li> -->
       <!-- <li class="list-group-item"><a href=".php">  </a></li> -->
       <!-- <li class="list-group-item"><a href=".php">  </a></li> -->

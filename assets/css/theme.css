@@ -31,3 +31,8 @@ body.theme-dark .alert-info {
   background-color: #0d6efd22;
   color: #e0e0ff;
 }
+
+.theme-dark .ddx {
+    border-color: #aaa;
+    color: #e79121;
+  }

@@ -31,9 +31,6 @@ $res = $stmt->get_result();
 $questions = $res->fetch_all(MYSQLI_ASSOC);
 $stmt->close();
 
-
-
-include 'header.php';
 ?>
 <h4>Quiz: <?= htmlspecialchars($quizInfo['quiz_name']) ?></h4>
 <form method="POST" action="process_quiz.php">

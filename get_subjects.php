@@ -1,5 +1,5 @@
 <?php
-require_once 'db.php';
+require_once 'db-backend.php';
 $class_id = intval($_GET['class_id'] ?? 0);
 $data = [];
 if ($class_id > 0) {

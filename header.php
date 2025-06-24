@@ -18,7 +18,7 @@
 
 <body class="theme-light">
 
- <div id="splash" >
+ <div id="splash" hidden>
   <img src="assets/images/progga.png" style="width:100px;"/>
     <h1 class="m-0 p-0">প্রজ্ঞা</h1>
     <h6 class="m-0 p-0">শেখো, নিজের মতো করে</h6>
@@ -49,12 +49,6 @@
     </div>
   </nav>
 
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-    
-    </div>
-  </nav>
 
 
 <div class="container mt-4">

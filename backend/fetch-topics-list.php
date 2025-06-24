@@ -3,8 +3,6 @@ require_once '../db-backend.php';
 $classname = $_GET['classname'] ?? '';
 $subcode = $_GET['subcode'] ?? '0';
 
-
-
 $datam = [];
 
 $stmt = $conn->prepare("  SELECT * FROM textbook where classname=? and subcode=? order by chapter, subchapter");

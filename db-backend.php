@@ -49,6 +49,7 @@ if (isset($_COOKIE['clsname'])) {
     $clsname = $_SESSION['clsname'] ?? '';
 }
 
+
 $cur = date('Y-m-d H:i:s');
 $td = date('Y-m-d');
 $sessionyear = date('Y');

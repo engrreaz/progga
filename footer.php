@@ -34,9 +34,6 @@
             icon.classList.add('bi-moon-fill');
         }
 
-
-
-
         document.getElementById('toggleTheme').addEventListener('click', () => {
     
             const icon = document.getElementById('themeIcon');
@@ -87,8 +84,6 @@
         }, 100); // 3 সেকেন্ড পর splash স্ক্রিন লুকিয়ে যাবে
     });
 </script>
-
-
 
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
 <script src="assets/js/main.js"></script>
